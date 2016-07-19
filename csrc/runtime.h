@@ -151,4 +151,8 @@ void run_solver(evaluation s);
 void inject_event(evaluation, buffer b, boolean);
 void block_close(block);
 
+void init_request_service(bag b);
+
 #include <edb.h>
+
+

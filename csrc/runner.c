@@ -192,6 +192,8 @@ static void fixedpoint(evaluation ev)
                      apply((thunk)t);
         }
     }
+    
+    print_multibag(ev, ev->t_solution);
 
     // allow the deltas to also see the updated base by applying
     // them after

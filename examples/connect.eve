@@ -1,0 +1,8 @@
+Create an http connection to myself
+  [#session-connect]
+  freeze
+    [#http-request url:"127.0.0.1:8080/"]
+
+handle the responses
+  [#http-response body]
+  

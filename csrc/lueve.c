@@ -167,6 +167,8 @@ int main(int argc, char **argv)
     // TODO: figure out a better way to manage multiple graphs
     init_json_service(h, root, enable_tracing, loadedParse);
 
+    init_request_service(root);
+
     prf("\n----------------------------------------------\n\nEve started. Running at http://localhost:%d\n\n",port);
     unix_wait();
 }
