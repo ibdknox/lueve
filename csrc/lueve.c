@@ -33,10 +33,11 @@ extern void *ignore;
 static CONTINUATION_1_2(test_result, heap, table, table);
 static void test_result(heap h, table s, table c)
 {
-    table_foreach(s, n, v) {
-        prf("%v %b\n", n, bag_dump(h, v));
-    }
-    destroy(h);
+    if (s) {
+        table_foreach(s, n, v) {
+            prf("%v %b\n", n, bag_dump(h, v));
+        }
+    } else prf("empty result\n");
 }
 
 static void run_test(bag root, buffer b, boolean tracing)
@@ -115,7 +116,7 @@ static void print_help(interpreter c, char *x, bag b)
 static struct command command_body[] = {
     {"p", "parse", "parse and print structure", true, do_parse},
     {"a", "analyze", "parse order print structure", true, do_analyze},
-    //    {"r", "run", "execute eve", true, do_run_test},
+    {"r", "run", "execute eve", true, do_run_test},
     //    {"s", "serve", "serve urls from the given root path", true, 0},
     {"e", "exec", "use eve as default path", true, do_exec},
     {"P", "port", "serve http on passed port", true, do_port},
